@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.zybooks.navdrawerfragments.R;
 import com.zybooks.navdrawerfragments.databinding.FragmentHomeBinding;
@@ -45,8 +46,9 @@ public class HomeFragment extends Fragment {
     }
 
     public void galleryItemButtonClick(View view, int item){
-        HomeFragmentDirections.ActionNavHomeToNavGallery action = HomeFragmentDirections.actionNavHomeToNavGallery();
+        HomeFragmentDirections.ActionNavHomeToNavGallery action = HomeFragmentDirections.actionNavHomeToNavGallery(item);
         //TODO: assign the appropriate item number value to the Destination Argument and navigate to the gallery page
-
+        action.setGalleryItemId(item);
+        NavHostFragment.findNavController(HomeFragment.this).navigate(action);
     }
 }

@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.zybooks.navdrawerfragments.R;
 import com.zybooks.navdrawerfragments.databinding.FragmentGalleryBinding;
@@ -22,7 +23,7 @@ public class GalleryFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_gallery,container,false);
+        return inflater.inflate(R.layout.fragment_gallery, container, false);
     }
 
     @Override
@@ -30,6 +31,7 @@ public class GalleryFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         TextView textView = view.findViewById(R.id.text_gallery);
         //TODO: Get the value of the Destination Argument and set the textView appropriately
-
-        textView.setText(getArguments().getString("amount"));
+        int item = GalleryFragmentArgs.fromBundle(getArguments()).getGalleryItemId();
+        textView.setText("Gallery item " + item);
     }
+}
