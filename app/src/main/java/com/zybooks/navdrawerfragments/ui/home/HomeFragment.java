@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.zybooks.navdrawerfragments.R;
 import com.zybooks.navdrawerfragments.databinding.FragmentHomeBinding;
@@ -31,13 +32,13 @@ public class HomeFragment extends Fragment {
 
 
         mGalleryItem1.setOnClickListener((View v) -> {
-            galleryItemButtonClick(v, );
+            galleryItemButtonClick(v, 1);
         });
         mGalleryItem2.setOnClickListener((View v) -> {
-            // do something here
+            galleryItemButtonClick(v, 2);
         });
         mGalleryItem3.setOnClickListener((View v) -> {
-            // do something here
+            galleryItemButtonClick(v, 3);
         });
 
         return root;

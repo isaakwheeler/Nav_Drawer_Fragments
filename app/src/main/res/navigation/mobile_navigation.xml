@@ -15,6 +15,7 @@
             app:destination="@id/nav_gallery" >
             <argument
                 android:name="navgalint"
+                app:argType="integer"
                 android:defaultValue="0" />
         </action>
     </fragment>
